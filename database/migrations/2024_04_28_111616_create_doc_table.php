@@ -16,7 +16,7 @@ class CreateDocTable extends Migration
         Schema::create('doc', function (Blueprint $table) {
             $table->bigIncrements('periode'); // Primary key
             $table->unsignedBigInteger('id_user'); // Foreign key
-            $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->date('tanggal');
             $table->string('distributor', 50);
             $table->enum('jns_ayam', ['Type1', 'Type2', 'Type3']); // Adjust enum values as needed
